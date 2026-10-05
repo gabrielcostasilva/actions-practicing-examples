@@ -1,8 +1,17 @@
 name: Standard CI
 
 on: 
-  workflow_dispatch
-
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: The target environment
+        type: choice
+        options:
+          - dev
+          - staging
+          - production
+        default: staging
+        required: true
 jobs:
   build:
     runs-on: ubuntu-latest
