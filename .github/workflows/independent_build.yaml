@@ -5,6 +5,9 @@ on: workflow_call
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      build_result: ${{ steps.main_build_step.conclusion }}
     steps:
       - run: "echo 'building with independent workflow ...'"
+        id: main_build_step
   
