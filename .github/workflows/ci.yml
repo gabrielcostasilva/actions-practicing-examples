@@ -10,11 +10,7 @@ on:
         required: true
 jobs:
   build:
-    runs-on: ubuntu-latest
-    environment: ${{ inputs.environment }}
-    steps:
-      - run: "echo 'building ...'"
-      - run: "echo 'hooking to ${{ vars.SERVICE_API }}'"
+    uses: ./.github/workflows/independent_build.yaml
 
   test:
     runs-on: ubuntu-latest
