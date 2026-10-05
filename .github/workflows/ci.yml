@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: "echo 'building ...'"
+      - run: "echo 'hooking to ${{ vars.SERVICE_API }}'"
 
   test:
     runs-on: ubuntu-latest
