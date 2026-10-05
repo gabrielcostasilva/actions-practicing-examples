@@ -12,6 +12,12 @@ jobs:
   build:
     uses: ./.github/workflows/independent_build.yaml
 
+  build_result:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: "echo 'the result is ${{ needs.build.outputs.build_result }}'"
+
   test:
     runs-on: ubuntu-latest
     needs: build
