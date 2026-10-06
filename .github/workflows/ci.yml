@@ -17,9 +17,9 @@ jobs:
     needs: build
     if: needs.build.outputs.build_result == 'success'
     steps:
+      - run: "exit 1"
       - run: "echo 'testing ...'"
       - run: "echo 'using API key: ${{ secrets.API_KEY }}'"
-      - run: "exit 1"
 
   deploy:
     runs-on: ubuntu-latest
