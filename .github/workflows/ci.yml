@@ -27,6 +27,16 @@ jobs:
         run: "echo 'testing ...'"
       - run: "echo 'using API key: ${{ secrets.API_KEY }}'"
 
+  e2e:
+    if: always()
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        browser: [firefox, chrome]
+        os: [windows, linux]
+    steps:
+      - run: "echo 'job ${{ strategy.job-index }}'"
+        
   deploy:
     if: always()
     runs-on: ubuntu-latest
