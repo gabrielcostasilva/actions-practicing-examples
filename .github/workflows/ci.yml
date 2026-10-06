@@ -17,8 +17,10 @@ jobs:
     needs: build
     if: needs.build.outputs.build_result == 'success'
     steps:
-      - run: "exit 1"
-      - run: "echo 'testing ...'"
+      - name: Quality check
+        run: "exit 1"
+      - if: always()
+        run: "echo 'testing ...'"
       - run: "echo 'using API key: ${{ secrets.API_KEY }}'"
 
   deploy:
