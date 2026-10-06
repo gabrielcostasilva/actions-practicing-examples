@@ -19,6 +19,7 @@ jobs:
     steps:
       - run: "echo 'testing ...'"
       - run: "echo 'using API key: ${{ secrets.API_KEY }}'"
+      - run: "exit 1"
 
   deploy:
     runs-on: ubuntu-latest
