@@ -16,3 +16,5 @@ jobs:
       - run: "echo 'doing it!'"
       - run: "echo 'the value set is: ${{ env.a_value }}'"
       - run: "echo running $GITHUB_WORKFLOW"
+      - run: "echo 'IMPORTANT VALUE' >> $GITHUB_OUTPUT"
+      - run: "echo $GITHUB_OUTPUT"
