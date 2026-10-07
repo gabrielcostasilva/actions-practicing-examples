@@ -1,0 +1,9 @@
+name: Random workflow for practing concepts
+
+on: workflow_dispatch
+
+jobs:
+  nike:
+    runs-on: ubuntu-latest
+    steps:
+      - run: "echo 'doing it!'"
