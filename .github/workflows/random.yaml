@@ -16,5 +16,7 @@ jobs:
       - run: "echo 'doing it!'"
       - run: "echo 'the value set is: ${{ env.a_value }}'"
       - run: "echo running $GITHUB_WORKFLOW"
-      - run: "echo 'IMPORTANT VALUE' >> $GITHUB_OUTPUT"
+      - run: "echo 'KEY=VALUE' >> $GITHUB_OUTPUT"
+      - run: "echo 'DB_URL=postgress://exmaple.com/db' >> $GITHUB_ENV"
       - run: "echo $GITHUB_OUTPUT"
+      - run: "echo $GITHUB_ENV"
