@@ -2,8 +2,16 @@ name: Random workflow for practing concepts
 
 on: workflow_dispatch
 
+permissions:
+  contents: read
+
 jobs:
   nike:
     runs-on: ubuntu-latest
+    permissions: 
+      pages: read
+    env:
+      a_value: "${{ github.repository }}"
     steps:
       - run: "echo 'doing it!'"
+      - run: "echo 'the value set is: ${{ env.a_value }}'"
