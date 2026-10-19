@@ -20,4 +20,4 @@ jobs:
       - run: "echo 'DB_URL=postgress://exmaple.com/db' >> $GITHUB_ENV"
       - run: "echo $GITHUB_OUTPUT"
       - run: "echo $GITHUB_ENV"
-      - run: "echo ::add-mask::$a_value"
+      - run: "echo '::add-mask::something really important'"
