@@ -11,7 +11,7 @@ jobs:
     permissions: 
       pages: read
     env:
-      a_value: "::add-mask::${{ github.repository }}"
+      a_value: ${{ github.repository }}
     steps:
       - run: "echo 'doing it!'"
       - run: "echo 'the value set is: ${{ env.a_value }}'"
@@ -20,4 +20,6 @@ jobs:
       - run: "echo 'DB_URL=postgress://exmaple.com/db' >> $GITHUB_ENV"
       - run: "echo $GITHUB_OUTPUT"
       - run: "echo $GITHUB_ENV"
-      - run: echo "$a_value"
+      - run: |
+          echo "::add-mask::something really important"
+          echo "The value is: something really important"
